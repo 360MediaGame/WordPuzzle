@@ -5,6 +5,16 @@ TagManager:
   serializedVersion: 2
   tags:
   - KeyBoard
+  - Center
+  - Prev1
+  - Prev2
+  - Next1
+  - Next2
+  - PrevEnd
+  - NextEnd
+  - Effect
+  - PASS
+  - FAIL
   layers:
   - Default
   - TransparentFX

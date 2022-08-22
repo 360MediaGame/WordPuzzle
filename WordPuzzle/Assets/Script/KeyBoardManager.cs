@@ -8,6 +8,9 @@ using System;
 
 public class KeyBoardManager : MonoBehaviour
 {
+    public GameObject O_Effect;
+    public GameObject _EndPopoup;
+
     TextMeshProUGUI _text;           
     public Canvas _canvas;           
     GraphicRaycaster m_gr;
@@ -33,7 +36,33 @@ public class KeyBoardManager : MonoBehaviour
     {
         // skrr~
         if (Input.GetMouseButtonUp(0))
-            InitBlockColor();
+        {
+            if (string.Compare((string)QuestionManager.Instance.Questions[QuestionManager.Instance.CurQuestionIndex].gameObject.name, GameManager.Instance.CombineWord) == 0)
+            {
+                QuestionManager.Instance.Questions[QuestionManager.Instance.CurQuestionIndex].gameObject.tag = "PASS";
+
+                QuestionManager.Instance.AnswerCount += 1;
+                UIManager.Instance._startTime = 11;
+                QuestionManager.Instance.MoveQuestion();
+
+                GameObject O_EFF = Instantiate(O_Effect, gameObject.transform.position, Quaternion.identity, GameObject.Find("Canvas").transform);
+                O_EFF.gameObject.tag = "Effect";
+                RectTransform O_EFF_rt = O_EFF.GetComponent<RectTransform>();
+                O_EFF_rt.localPosition = new Vector3(0, 293, 0);
+
+                Destroy(O_EFF, 1f);
+            }
+
+            ////////////////////////////////////
+            if (QuestionManager.Instance.CurQuestionIndex >= 9)
+            {
+                GameObject EndPopup = Instantiate(_EndPopoup, gameObject.transform.position, Quaternion.identity, GameObject.Find("Canvas").transform);
+                RectTransform EndPopup_rt = EndPopup.GetComponent<RectTransform>();
+                EndPopup_rt.localPosition = new Vector3(0, 0, 0);
+            }
+
+            InitBlockColor();               
+        }
 
         // UI 레이캐스트
         m_ped.position = Input.mousePosition;

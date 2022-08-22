@@ -5,6 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class ChangeScene : MonoBehaviour
 {
+    public void SceneChange_RESTART()
+    {
+        if (GameManager.Instance.scene.name == "EAZY_SCENE")
+            SceneManager.LoadScene("EAZY_SCENE");
+        if (GameManager.Instance.scene.name == "NORMAL_SCENE")
+            SceneManager.LoadScene("NORMAL_SCENE");
+        if (GameManager.Instance.scene.name == "HARD_SCENE")
+            SceneManager.LoadScene("HARD_SCENE");
+    }
+
     public void SceneChange_SCENE_EAZY()
     {
         Debug.Log("eazyscene");
