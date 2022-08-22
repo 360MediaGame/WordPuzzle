@@ -144,6 +144,108 @@ public class GameManager : MonoBehaviour
                         break;
                 }
                 break;
+            case "NORMAL_SCENE":
+                PUZZLE_ROW = 5;
+                PUZZLE_COL = 13;
+                START_X = -640;
+                START_Y = 0;
+                SPACE = 90;
+
+                switch (idx)
+                {
+                    case 0:
+                        Debug.Log("Case 0 Load");
+                        data = CSVParser.Read("WordPuzzle10");
+                        break;
+                    case 1:
+                        Debug.Log("Case 1 Load");
+                        data = CSVParser.Read("WordPuzzle11");
+                        break;
+                    case 2:
+                        Debug.Log("Case 2 Load");
+                        data = CSVParser.Read("WordPuzzle12");
+                        break;
+                    case 3:
+                        Debug.Log("Case 3 Load");
+                        data = CSVParser.Read("WordPuzzle13");
+                        break;
+                    case 4:
+                        Debug.Log("Case 4 Load");
+                        data = CSVParser.Read("WordPuzzle14");
+                        break;
+                    case 5:
+                        Debug.Log("Case 5 Load");
+                        data = CSVParser.Read("WordPuzzle15");
+                        break;
+                    case 6:
+                        Debug.Log("Case 6 Load");
+                        data = CSVParser.Read("WordPuzzle16");
+                        break;
+                    case 7:
+                        Debug.Log("Case 7 Load");
+                        data = CSVParser.Read("WordPuzzle17");
+                        break;
+                    case 8:
+                        Debug.Log("Case 8 Load");
+                        data = CSVParser.Read("WordPuzzle18");
+                        break;
+                    case 9:
+                        Debug.Log("Case 9 Load");
+                        data = CSVParser.Read("WordPuzzle19");
+                        break;
+                }
+                break;
+            case "HARD_SCENE":
+                PUZZLE_ROW = 6;
+                PUZZLE_COL = 15;
+                START_X = -650;
+                START_Y = 20;
+                SPACE = 80;
+
+                switch (idx)
+                {
+                    case 0:
+                        Debug.Log("Case 0 Load");
+                        data = CSVParser.Read("WordPuzzle20");
+                        break;
+                    case 1:
+                        Debug.Log("Case 1 Load");
+                        data = CSVParser.Read("WordPuzzle21");
+                        break;
+                    case 2:
+                        Debug.Log("Case 2 Load");
+                        data = CSVParser.Read("WordPuzzle22");
+                        break;
+                    case 3:
+                        Debug.Log("Case 3 Load");
+                        data = CSVParser.Read("WordPuzzle23");
+                        break;
+                    case 4:
+                        Debug.Log("Case 4 Load");
+                        data = CSVParser.Read("WordPuzzle24");
+                        break;
+                    case 5:
+                        Debug.Log("Case 5 Load");
+                        data = CSVParser.Read("WordPuzzle25");
+                        break;
+                    case 6:
+                        Debug.Log("Case 6 Load");
+                        data = CSVParser.Read("WordPuzzle26");
+                        break;
+                    case 7:
+                        Debug.Log("Case 7 Load");
+                        data = CSVParser.Read("WordPuzzle27");
+                        break;
+                    case 8:
+                        Debug.Log("Case 8 Load");
+                        data = CSVParser.Read("WordPuzzle28");
+                        break;
+                    case 9:
+                        Debug.Log("Case 9 Load");
+                        data = CSVParser.Read("WordPuzzle29");
+                        break;
+                }
+                break;
             default:
                 Debug.Log("Scene Load Error");
                 break;

@@ -116,60 +116,50 @@ public class QuestionManager : MonoBehaviour
 
     void Start()
     {
-        switch (GameManager.Instance.scene.name)
+        SetTempQuestion();
+        CreateUnDuplicateRandom(0, 10);
+
+        for (int i = 0; i < 10; ++i)
         {
-            case "EAZY_SCENE":
-                SetTempQuestion();
-                CreateUnDuplicateRandom(0, 10);
-                //CreateUnDuplicateRandom(0, 10);
+            Questions_Gray.Add(tempQuestions_Gray[ObjList[i]]);
 
-                for (int i = 0; i < 10; ++i)
-                {
-                    Questions_Gray.Add(tempQuestions_Gray[ObjList[i]]);
+            GameObject QuestionAnimal = Instantiate(tempQuestions[ObjList[i]], gameObject.transform.position, Quaternion.identity, GameObject.Find("Canvas").transform);
+            QuestionAnimal.gameObject.name = tempQuestions[ObjList[i]].gameObject.name;
+            Questions.Add(QuestionAnimal);
+        }
 
-                    GameObject QuestionAnimal = Instantiate(tempQuestions[ObjList[i]], gameObject.transform.position, Quaternion.identity, GameObject.Find("Canvas").transform);
-                    QuestionAnimal.gameObject.name = tempQuestions[ObjList[i]].gameObject.name;
-                    Questions.Add(QuestionAnimal);
-                }
-
-                for (int i = 0; i < 10; ++i)
-                {
-                    if (i == 0)
-                    {
-                        Questions[0].tag = "Center";
-                        RectTransform Questions_rt = Questions[i].GetComponent<RectTransform>();
-                        Questions_rt.localPosition = new Vector3(NowPos.x, NowPos.y, 0);
-                    }
-                    else if (i == 1)
-                    {
-                        Questions[1].tag = "Next1";
-                        RectTransform Questions_rt = Questions[i].GetComponent<RectTransform>();
-                        Questions_rt.localPosition = new Vector3(Next1Pos.x, Next1Pos.y, 0);
-                        Questions_rt.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, Scale1);
-                        Questions_rt.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, Scale1);
-                    }
-                    else if (i == 2)
-                    {
-                        Questions[2].tag = "Next2";
-                        RectTransform Questions_rt = Questions[i].GetComponent<RectTransform>();
-                        Questions_rt.localPosition = new Vector3(Next2Pos.x, Next2Pos.y, 0);
-                        Questions_rt.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, Scale2);
-                        Questions_rt.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, Scale2);
-                    }
-                    else
-                    { 
-                        Questions[i].tag = "NextEnd";
-                        RectTransform Questions_rt = Questions[i].GetComponent<RectTransform>();
-                        Questions_rt.localPosition = new Vector3(NextEnd.x, NextEnd.y, 0);
-                        Questions_rt.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, 0);
-                        Questions_rt.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, 0);
-                    }
-                }
-
-                break;
-            default:
-                Debug.Log("Question Load Failed");
-                break;
+        for (int i = 0; i < 10; ++i)
+        {
+            if (i == 0)
+            {
+                Questions[0].tag = "Center";
+                RectTransform Questions_rt = Questions[i].GetComponent<RectTransform>();
+                Questions_rt.localPosition = new Vector3(NowPos.x, NowPos.y, 0);
+            }
+            else if (i == 1)
+            {
+                Questions[1].tag = "Next1";
+                RectTransform Questions_rt = Questions[i].GetComponent<RectTransform>();
+                Questions_rt.localPosition = new Vector3(Next1Pos.x, Next1Pos.y, 0);
+                Questions_rt.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, Scale1);
+                Questions_rt.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, Scale1);
+            }
+            else if (i == 2)
+            {
+                Questions[2].tag = "Next2";
+                RectTransform Questions_rt = Questions[i].GetComponent<RectTransform>();
+                Questions_rt.localPosition = new Vector3(Next2Pos.x, Next2Pos.y, 0);
+                Questions_rt.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, Scale2);
+                Questions_rt.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, Scale2);
+            }
+            else
+            {
+                Questions[i].tag = "NextEnd";
+                RectTransform Questions_rt = Questions[i].GetComponent<RectTransform>();
+                Questions_rt.localPosition = new Vector3(NextEnd.x, NextEnd.y, 0);
+                Questions_rt.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, 0);
+                Questions_rt.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, 0);
+            }
         }
     }
 
