@@ -533,7 +533,7 @@ MonoBehaviour:
   BlackDom: {fileID: 2757193026782793036, guid: 063223c8a4b707e42ae1709a5d24d070, type: 3}
   RedEyes_Gray: {fileID: 5457647103819828725, guid: 55ca6955f0b91ad4b963fd73b2fc3416, type: 3}
   Sonamoo_Gray: {fileID: 1602808196216942419, guid: eb9ad085cf07cef4aa33ac7778282ebf, type: 3}
-  Pretty_Gray: {fileID: 2045765776181381891, guid: 6826f7c8f05527045a821256242dba5c, type: 3}
+  Pretty_Gray: {fileID: 2313462946060466412, guid: 7084d1d37e00b204495de4967f617a59, type: 3}
   ChungHwang_Gray: {fileID: 1062812108166331667, guid: da441887227f3bf45a014c914af9c99d, type: 3}
   Gang_Gray: {fileID: 8713987204554239279, guid: 0c08f46dbf2c4fd46a70cfde009a4747, type: 3}
   StarMal_Gray: {fileID: 5937959721535408043, guid: edcd4ec4bd212c143b531917e911b837, type: 3}
