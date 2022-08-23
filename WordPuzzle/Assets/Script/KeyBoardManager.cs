@@ -59,11 +59,10 @@ public class KeyBoardManager : MonoBehaviour
                     UIManager.Instance._isGameEnd = true;
                     Invoke("PopUpEnd", 1f);
                 }
+                InitBlockColor2();
             }
-
-            
-
-            InitBlockColor();               
+            else
+                InitBlockColor();               
         }
 
         // UI 레이캐스트
@@ -215,6 +214,15 @@ public class KeyBoardManager : MonoBehaviour
             GameManager.Instance.Block[i].GetComponent<Image>().color = Color.white;
             GameManager.Instance.CombineWord = "";
             UIManager.Instance._AnswerViewText.text = "";
+        }
+    }
+    void InitBlockColor2()
+    {
+        for (int i = 0; i < GameManager.Instance.Block.Count; ++i)
+        {
+            GameManager.Instance.Block[i].GetComponent<Image>().color = Color.white;
+            GameManager.Instance.CombineWord = "";
+            //UIManager.Instance._AnswerViewText.text = "";
         }
     }
 }
