@@ -12,6 +12,7 @@ public class KeyBoardManager : MonoBehaviour
     public AudioClip audioPass;
     public AudioClip audioFail;
     public AudioClip audioClick;
+    public AudioClip audioEndPopup;
     AudioSource audioSource;
 
     public GameObject O_Effect;
@@ -226,7 +227,10 @@ public class KeyBoardManager : MonoBehaviour
     void PopUpEnd()
     {
         ////////////////////////////////////
-       
+        // sound
+        audioSource.clip = audioEndPopup;
+        audioSource.Play();
+
         GameObject EndPopup = Instantiate(_EndPopoup, gameObject.transform.position, Quaternion.identity, GameObject.Find("Canvas").transform);
         RectTransform EndPopup_rt = EndPopup.GetComponent<RectTransform>();
         EndPopup_rt.localPosition = new Vector3(0, 0, 0);

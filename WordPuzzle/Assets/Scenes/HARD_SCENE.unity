@@ -681,6 +681,7 @@ MonoBehaviour:
   audioPass: {fileID: 8300000, guid: 067b7df41c3a7d543b221e9aea59044a, type: 3}
   audioFail: {fileID: 8300000, guid: 97f055f8d2b2ff142b0861a63407f4f0, type: 3}
   audioClick: {fileID: 8300000, guid: 819dfdbd7ddf2b048ac43bf484cbc629, type: 3}
+  audioEndPopup: {fileID: 8300000, guid: 44d2f1ea099f3f54ba92453e94e7205c, type: 3}
   O_Effect: {fileID: 3047866863752559584, guid: 0cea313faea68664898c38b72dfd8015, type: 3}
   _EndPopoup: {fileID: 6056128245307340856, guid: 34cd5b6f0ed320349bad15001518d6b8, type: 3}
   _canvas: {fileID: 1206873602}
