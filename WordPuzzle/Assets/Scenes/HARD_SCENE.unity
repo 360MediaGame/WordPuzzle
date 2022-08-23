@@ -513,7 +513,7 @@ MonoBehaviour:
   tempQuestions_Gray: []
   RedEyes: {fileID: 3224064330864132957, guid: ed213a79d6e3366438c8f352f6f670b6, type: 3}
   Sonamoo: {fileID: 3631614220442539004, guid: 0584c275556cd3e42924a679c74a0e51, type: 3}
-  Pretty: {fileID: 2045765776181381891, guid: 6826f7c8f05527045a821256242dba5c, type: 3}
+  Pretty: {fileID: 8113236285621071050, guid: 3b56c5eff0ec62a49a9c8e15722ec65a, type: 3}
   ChungHwang: {fileID: 5765543244406775679, guid: b82cbdd05fed9b1458e4f6b61a062a40, type: 3}
   Gang: {fileID: 7173494328046375120, guid: 272f85a5bc0341b4491ea0a58f49494c, type: 3}
   StarMal: {fileID: 5427659179144130392, guid: 3482e2a454a29a14c9ecbac1d2c261a9, type: 3}
