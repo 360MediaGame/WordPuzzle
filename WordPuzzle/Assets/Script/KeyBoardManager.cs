@@ -8,6 +8,12 @@ using System;
 
 public class KeyBoardManager : MonoBehaviour
 {
+    // Sound
+    public AudioClip audioPass;
+    public AudioClip audioFail;
+    public AudioClip audioClick;
+    AudioSource audioSource;
+
     public GameObject O_Effect;
     public GameObject _EndPopoup;
 
@@ -26,6 +32,11 @@ public class KeyBoardManager : MonoBehaviour
 
     bool BlockInitTrigger = false;
 
+    void Awake()
+    {
+        this.audioSource = GetComponent<AudioSource>();
+    }
+
     void Start()
     {
         m_gr = _canvas.GetComponent<GraphicRaycaster>();
@@ -41,6 +52,10 @@ public class KeyBoardManager : MonoBehaviour
         {
             if (string.Compare((string)QuestionManager.Instance.Questions[QuestionManager.Instance.CurQuestionIndex].gameObject.name, GameManager.Instance.CombineWord) == 0)
             {
+                // sound
+                audioSource.clip = audioPass;
+                audioSource.Play();
+
                 QuestionManager.Instance.Questions[QuestionManager.Instance.CurQuestionIndex].gameObject.tag = "PASS";
 
                 QuestionManager.Instance.AnswerCount += 1;
@@ -62,7 +77,13 @@ public class KeyBoardManager : MonoBehaviour
                 InitBlockColor2();
             }
             else
+            {
+                // sound
+                audioSource.clip = audioFail;
+                audioSource.Play();
+
                 InitBlockColor();               
+            }
         }
 
         // UI 레이캐스트
@@ -82,6 +103,10 @@ public class KeyBoardManager : MonoBehaviour
 
                 for (int i = 0; i < GameManager.Instance.Block.Count; ++i)
                 {
+                    // sound
+                    audioSource.clip = audioClick;
+                    audioSource.Play();
+
                     if (GameManager.Instance.Block[i].gameObject.name == results[0].gameObject.name)
                         GameManager.Instance.Block[i].GetComponent<Image>().color = Color.red;
                 }
@@ -94,7 +119,7 @@ public class KeyBoardManager : MonoBehaviour
                 
                 int XValue = Mathf.Abs(CurX - AncorX);
                 int YValue = Mathf.Abs(CurY - AncorY);
-
+                
                 // 가로
                 if (XValue > YValue)
                 {
