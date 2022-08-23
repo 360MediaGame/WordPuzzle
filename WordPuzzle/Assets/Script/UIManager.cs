@@ -13,13 +13,16 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI _AnswerCNT;
     public TextMeshProUGUI _CurQuestionIndex;
 
+    
     public GameObject _TimeOverEffect;
     public GameObject _EndPopoup;
 
     public float _startTime;
-
+    public float _readyTime;
+    public bool _isReady = false;
+    public bool _isGameEnd = false;
     private bool _isEndPopup = false;
-
+    
     public static UIManager Instance
     {
         get
@@ -36,11 +39,23 @@ public class UIManager : MonoBehaviour
     void Start()
     {
         _startTime = 11f;
+        _readyTime = 2f;
+
+
     }
 
     void Update()
     {
-        _startTime -= Time.deltaTime;
+        _readyTime -= Time.deltaTime;
+
+        if (_readyTime < 0)
+            _isReady = true;
+
+        if (!_isReady)
+            return;
+
+        if (!_isGameEnd)
+            _startTime -= Time.deltaTime;
 
         _TimerText.text = ((int)_startTime).ToString();
 
@@ -71,18 +86,25 @@ public class UIManager : MonoBehaviour
 
             Destroy(TimeOver_EFF, 1f);
 
-            ////////////////////////////////////
             if (QuestionManager.Instance.CurQuestionIndex >= 9)
             {
-                _startTime = 10.5f;
-                if (!_isEndPopup)
-                {
-                    GameObject EndPopup = Instantiate(_EndPopoup, gameObject.transform.position, Quaternion.identity, GameObject.Find("Canvas").transform);
-                    RectTransform EndPopup_rt = EndPopup.GetComponent<RectTransform>();
-                    EndPopup_rt.localPosition = new Vector3(0, 0, 0);
-                    _isEndPopup = true;
-                }
+                _isGameEnd = true;
+                Invoke("PopUpEnd", 1f);
+
             }
+        }
+    }
+
+    void PopUpEnd()
+    {
+        ////////////////////////////////////
+        _startTime = 10.5f;
+        if (!_isEndPopup)
+        {
+            GameObject EndPopup = Instantiate(_EndPopoup, gameObject.transform.position, Quaternion.identity, GameObject.Find("Canvas").transform);
+            RectTransform EndPopup_rt = EndPopup.GetComponent<RectTransform>();
+            EndPopup_rt.localPosition = new Vector3(0, 0, 0);
+            _isEndPopup = true;
         }
     }
 }

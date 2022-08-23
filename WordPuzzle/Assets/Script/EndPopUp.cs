@@ -30,7 +30,7 @@ public class EndPopUp : MonoBehaviour
 
     void Start()
     {
-        _AnswerCNT.text = QuestionManager.Instance.AnswerCount.ToString();
+        _AnswerCNT.text = QuestionManager.Instance.AnswerCount.ToString() + "°³";
 
         endImage = Instantiate(QuestionManager.Instance.Questions[0], gameObject.transform.position, Quaternion.identity, GameObject.Find("Canvas").transform);
         endImage_rt = endImage.GetComponent<RectTransform>();

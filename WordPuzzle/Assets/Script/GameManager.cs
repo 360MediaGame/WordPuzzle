@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
 {
     private static GameManager instance;
 
+    public GameObject ReadyGo;
     public GameObject KeyBoard;
     public TextMeshProUGUI _text;
 
@@ -85,6 +86,11 @@ public class GameManager : MonoBehaviour
     {
         MakeKeyBoardData();
         MakeKeyBoard();
+
+        GameObject Readygo = Instantiate(ReadyGo, gameObject.transform.position, Quaternion.identity, GameObject.Find("Canvas").transform);
+        RectTransform Readygo_rt = Readygo.GetComponent<RectTransform>();
+        Readygo_rt.localPosition = new Vector3(0, 50, 0);
+        Destroy(Readygo, 2f);
     }
 
     void MakeKeyBoardData()

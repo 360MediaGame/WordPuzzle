@@ -34,6 +34,8 @@ public class KeyBoardManager : MonoBehaviour
 
     void Update()
     {
+        if (!UIManager.Instance._isReady)
+            return;
         // skrr~
         if (Input.GetMouseButtonUp(0))
         {
@@ -51,15 +53,15 @@ public class KeyBoardManager : MonoBehaviour
                 O_EFF_rt.localPosition = new Vector3(0, 293, 0);
 
                 Destroy(O_EFF, 1f);
+
+                if (QuestionManager.Instance.CurQuestionIndex >= 9)
+                {
+                    UIManager.Instance._isGameEnd = true;
+                    Invoke("PopUpEnd", 1f);
+                }
             }
 
-            ////////////////////////////////////
-            if (QuestionManager.Instance.CurQuestionIndex >= 9)
-            {
-                GameObject EndPopup = Instantiate(_EndPopoup, gameObject.transform.position, Quaternion.identity, GameObject.Find("Canvas").transform);
-                RectTransform EndPopup_rt = EndPopup.GetComponent<RectTransform>();
-                EndPopup_rt.localPosition = new Vector3(0, 0, 0);
-            }
+            
 
             InitBlockColor();               
         }
@@ -79,7 +81,6 @@ public class KeyBoardManager : MonoBehaviour
                 AncorX = (int)results[0].gameObject.GetComponent<RectTransform>().position.x;
                 AncorY = (int)results[0].gameObject.GetComponent<RectTransform>().position.y;
 
-                // ¿”Ω√SIBBAL
                 for (int i = 0; i < GameManager.Instance.Block.Count; ++i)
                 {
                     if (GameManager.Instance.Block[i].gameObject.name == results[0].gameObject.name)
@@ -196,6 +197,15 @@ public class KeyBoardManager : MonoBehaviour
                 }
             }
         }
+    }
+
+    void PopUpEnd()
+    {
+        ////////////////////////////////////
+       
+        GameObject EndPopup = Instantiate(_EndPopoup, gameObject.transform.position, Quaternion.identity, GameObject.Find("Canvas").transform);
+        RectTransform EndPopup_rt = EndPopup.GetComponent<RectTransform>();
+        EndPopup_rt.localPosition = new Vector3(0, 0, 0);
     }
 
     void InitBlockColor()

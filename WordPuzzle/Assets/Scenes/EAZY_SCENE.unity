@@ -731,6 +731,9 @@ MonoBehaviour:
   _TimeOverEffect: {fileID: 989988174047095328, guid: 77ee56d3e71a9424ca775cee389c7907, type: 3}
   _EndPopoup: {fileID: 6056128245307340856, guid: 34cd5b6f0ed320349bad15001518d6b8, type: 3}
   _startTime: 0
+  _readyTime: 0
+  _isReady: 0
+  _isGameEnd: 0
 --- !u!4 &952616467
 Transform:
   m_ObjectHideFlags: 0
@@ -1328,6 +1331,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f005a81fa128eed4fb21a4d4bfdf8243, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ReadyGo: {fileID: 5199274498355554163, guid: c7d5a8d88a3ee2040a32ffd3e462e518, type: 3}
   KeyBoard: {fileID: 7690450461532752248, guid: 0eecf7e183ab1754e80fc8496249da58, type: 3}
   _text: {fileID: 0}
   createPoint: {x: 0, y: 0}
