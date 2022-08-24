@@ -53,6 +53,12 @@ public class KeyBoardManager : MonoBehaviour
         {
             if (string.Compare((string)QuestionManager.Instance.Questions[QuestionManager.Instance.CurQuestionIndex].gameObject.name, GameManager.Instance.CombineWord) == 0)
             {
+                if (GameObject.FindWithTag("Effect"))
+                {
+                    Debug.Log("¸·À½");
+                    InitBlockColor();
+                    return;
+                }
                 // sound
                 audioSource.clip = audioPass;
                 audioSource.Play();

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 989988174047095332}
   m_Layer: 5
   m_Name: TimeOver
-  m_TagString: Untagged
+  m_TagString: Effect
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
