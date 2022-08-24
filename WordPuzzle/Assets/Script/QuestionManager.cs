@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class QuestionManager : MonoBehaviour
 {
@@ -355,6 +356,7 @@ public class QuestionManager : MonoBehaviour
                 // 정답창 초기화
                 UIManager.Instance._AnswerViewText.text = "";
                 UIManager.Instance._isStopTimer = false;
+                
             }
             newScale = Question_rt.rect.width - Time.deltaTime * 100;
             Question_rt.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, newScale);

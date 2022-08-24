@@ -101,6 +101,9 @@ public class UIManager : MonoBehaviour
 
             _isStopTimer = true;
 
+            for (int i = 0; i < GameManager.Instance.Block.Count; ++i)
+                GameManager.Instance.Block[i].GetComponent<Image>().color = Color.white;
+
             if (QuestionManager.Instance.CurQuestionIndex >= 9)
             {
                 _isGameEnd = true;
