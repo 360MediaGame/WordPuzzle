@@ -513,7 +513,7 @@ MonoBehaviour:
   tempQuestions_Gray: []
   RedEyes: {fileID: 3224064330864132957, guid: ed213a79d6e3366438c8f352f6f670b6, type: 3}
   Sonamoo: {fileID: 3631614220442539004, guid: 0584c275556cd3e42924a679c74a0e51, type: 3}
-  Pretty: {fileID: 8113236285621071050, guid: 3b56c5eff0ec62a49a9c8e15722ec65a, type: 3}
+  Pretty: {fileID: 6919176354280601194, guid: 3b56c5eff0ec62a49a9c8e15722ec65a, type: 3}
   ChungHwang: {fileID: 5765543244406775679, guid: b82cbdd05fed9b1458e4f6b61a062a40, type: 3}
   Gang: {fileID: 7173494328046375120, guid: 272f85a5bc0341b4491ea0a58f49494c, type: 3}
   StarMal: {fileID: 5427659179144130392, guid: 3482e2a454a29a14c9ecbac1d2c261a9, type: 3}
@@ -833,8 +833,10 @@ MonoBehaviour:
   _EndPopoup: {fileID: 6056128245307340856, guid: 34cd5b6f0ed320349bad15001518d6b8, type: 3}
   _startTime: 0
   _readyTime: 0
+  _resetTime: 0
   _isReady: 0
   _isGameEnd: 0
+  _isStopTimer: 0
 --- !u!4 &952616467
 Transform:
   m_ObjectHideFlags: 0
