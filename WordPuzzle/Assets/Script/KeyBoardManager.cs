@@ -32,6 +32,7 @@ public class KeyBoardManager : MonoBehaviour
     int Cursormovepos;
 
     bool BlockInitTrigger = false;
+    bool isValidTouch = false;
 
     void Awake()
     {
@@ -46,16 +47,20 @@ public class KeyBoardManager : MonoBehaviour
 
     void Update()
     {
+        if (UIManager.Instance._isStopTimer)
+            return;
+
         if (!UIManager.Instance._isReady)
             return;
         // skrr~
         if (Input.GetMouseButtonUp(0))
         {
+            isValidTouch = false;
+
             if (string.Compare((string)QuestionManager.Instance.Questions[QuestionManager.Instance.CurQuestionIndex].gameObject.name, GameManager.Instance.CombineWord) == 0)
             {
                 if (GameObject.FindWithTag("Effect"))
                 {
-                    Debug.Log("¸·À½");
                     InitBlockColor();
                     return;
                 }
@@ -76,12 +81,16 @@ public class KeyBoardManager : MonoBehaviour
 
                 Destroy(O_EFF, 1f);
 
+                UIManager.Instance._isStopTimer = true;
+
                 if (QuestionManager.Instance.CurQuestionIndex >= 9)
                 {
                     UIManager.Instance._isGameEnd = true;
                     Invoke("PopUpEnd", 1f);
                 }
                 InitBlockColor2();
+
+                
             }
             else
             {
@@ -105,6 +114,14 @@ public class KeyBoardManager : MonoBehaviour
 
             if (Input.GetMouseButtonDown(0))
             {
+                if (results[0].gameObject.tag != "KeyBoard")
+                {
+                    isValidTouch = false;
+                    return;
+                }
+                else
+                    isValidTouch = true;
+
                 AncorX = (int)results[0].gameObject.GetComponent<RectTransform>().position.x;
                 AncorY = (int)results[0].gameObject.GetComponent<RectTransform>().position.y;
 
@@ -121,6 +138,9 @@ public class KeyBoardManager : MonoBehaviour
 
             if (Input.GetMouseButton(0))
             {
+                if (!isValidTouch)
+                    return;
+
                 CurX = (int)results[0].gameObject.GetComponent<RectTransform>().position.x;
                 CurY = (int)results[0].gameObject.GetComponent<RectTransform>().position.y;
                 
@@ -257,7 +277,7 @@ public class KeyBoardManager : MonoBehaviour
         {
             GameManager.Instance.Block[i].GetComponent<Image>().color = Color.white;
             GameManager.Instance.CombineWord = "";
-            //UIManager.Instance._AnswerViewText.text = "";
+            //UIManager.Instance._AnswerViewText.text = GameManager.Instance.AnswerWord;
         }
     }
 }

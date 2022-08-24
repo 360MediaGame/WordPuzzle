@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
@@ -19,9 +20,11 @@ public class UIManager : MonoBehaviour
 
     public float _startTime;
     public float _readyTime;
+    public float _resetTime;
     public bool _isReady = false;
     public bool _isGameEnd = false;
     private bool _isEndPopup = false;
+    public bool _isStopTimer = false;
     
     public static UIManager Instance
     {
@@ -40,18 +43,28 @@ public class UIManager : MonoBehaviour
     {
         _startTime = 11f;
         _readyTime = 2f;
-
+        _resetTime = 20f;
 
     }
 
     void Update()
     {
+        if (_isGameEnd)
+        {
+            _resetTime -= Time.deltaTime;
+            if (_resetTime < 0)
+                SceneManager.LoadScene("LOBBY_SCENE");
+        }    
+
         _readyTime -= Time.deltaTime;
 
         if (_readyTime < 0)
             _isReady = true;
 
         if (!_isReady)
+            return;
+
+        if (_isStopTimer)
             return;
 
         if (!_isGameEnd)
@@ -86,11 +99,12 @@ public class UIManager : MonoBehaviour
 
             Destroy(TimeOver_EFF, 1f);
 
+            _isStopTimer = true;
+
             if (QuestionManager.Instance.CurQuestionIndex >= 9)
             {
                 _isGameEnd = true;
                 Invoke("PopUpEnd", 1f);
-
             }
         }
     }

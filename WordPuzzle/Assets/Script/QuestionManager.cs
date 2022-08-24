@@ -351,6 +351,10 @@ public class QuestionManager : MonoBehaviour
                     CurQuestionIndex++;
                     isCntUp = true;
                 }
+
+                // 정답창 초기화
+                UIManager.Instance._AnswerViewText.text = "";
+                UIManager.Instance._isStopTimer = false;
             }
             newScale = Question_rt.rect.width - Time.deltaTime * 100;
             Question_rt.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, newScale);
