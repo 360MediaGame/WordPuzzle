@@ -833,8 +833,10 @@ MonoBehaviour:
   _EndPopoup: {fileID: 6056128245307340856, guid: 34cd5b6f0ed320349bad15001518d6b8, type: 3}
   _startTime: 0
   _readyTime: 0
+  _resetTime: 0
   _isReady: 0
   _isGameEnd: 0
+  _isStopTimer: 0
 --- !u!4 &952616467
 Transform:
   m_ObjectHideFlags: 0
@@ -910,15 +912,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\uD0A4\uBCF4\uB4DC\uB85C \uC815\uB2F5\uC744 \uCC3E\uC544\uBCF4\uC138\uC694"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: f9c1594a17aa89843be13437f5a6c483, type: 2}
-  m_sharedMaterial: {fileID: -1349436256580217961, guid: f9c1594a17aa89843be13437f5a6c483, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 0ff48f912facfeb4e9b2bf39bc4f2a4b, type: 2}
+  m_sharedMaterial: {fileID: 3953085430658348709, guid: 0ff48f912facfeb4e9b2bf39bc4f2a4b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4293915110
+  m_fontColor: {r: 0.90334636, g: 0.9433962, b: 0.9375948, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
