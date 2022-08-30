@@ -105,8 +105,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\uC815\uB2F5\n\uBD89\uC740\uB208\uC790\uB9AC\uCC38\uC9D1\uAC8C"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: f9c1594a17aa89843be13437f5a6c483, type: 2}
-  m_sharedMaterial: {fileID: -1349436256580217961, guid: f9c1594a17aa89843be13437f5a6c483, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: f260bc71caafa6c4185f8e9b40bc37b9, type: 2}
+  m_sharedMaterial: {fileID: 5396311519310024529, guid: f260bc71caafa6c4185f8e9b40bc37b9, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

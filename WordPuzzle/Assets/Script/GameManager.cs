@@ -79,7 +79,50 @@ public class GameManager : MonoBehaviour
         RandomKorean.Add("영");
         RandomKorean.Add("미");
         RandomKorean.Add("지");
-
+        RandomKorean.Add("내");
+        RandomKorean.Add("가");
+        RandomKorean.Add("너");
+        RandomKorean.Add("란");
+        RandomKorean.Add("병");
+        RandomKorean.Add("에");
+        RandomKorean.Add("걸");
+        RandomKorean.Add("리");
+        RandomKorean.Add("면");
+        RandomKorean.Add("하");
+        RandomKorean.Add("루");
+        RandomKorean.Add("만");
+        RandomKorean.Add("에");
+        RandomKorean.Add("완");
+        RandomKorean.Add("치");
+        RandomKorean.Add("하");
+        RandomKorean.Add("지");
+        RandomKorean.Add("만");
+        RandomKorean.Add("내");
+        RandomKorean.Add("가");
+        RandomKorean.Add("병");
+        RandomKorean.Add("이");
+        RandomKorean.Add("라");
+        RandomKorean.Add("고");
+        RandomKorean.Add("치");
+        RandomKorean.Add("면");
+        RandomKorean.Add("나");
+        RandomKorean.Add("는");
+        RandomKorean.Add("난");
+        RandomKorean.Add("치");
+        RandomKorean.Add("랩");
+        RandomKorean.Add("이");
+        RandomKorean.Add("게");
+        RandomKorean.Add("임");
+        RandomKorean.Add("이");
+        RandomKorean.Add("라");
+        RandomKorean.Add("면");
+        RandomKorean.Add("내");
+        RandomKorean.Add("혀");
+        RandomKorean.Add("는");
+        RandomKorean.Add("고");
+        RandomKorean.Add("의");
+        RandomKorean.Add("반");
+        RandomKorean.Add("칙");
     }
 
     void Start()
